@@ -1,0 +1,44 @@
+<template>
+  <template if:true={accounts}>
+    <lightning-card title="Asset Whitelist" icon-name="standard:high_velocity_sales">
+
+      <div class="slds-var-p-around_x-small">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="" scope="col">
+                <div class="slds-truncate" title="Opportunity Name">Account Name</div>
+              </th>
+              <template for:each={filters} for:item="fil">
+                <th key={fil.Id} class="" scope="col">
+                  <div class="slds-truncate" title="Account Name">{fil.Product__r.Name}</div>
+                </th>
+              </template>
+
+            </tr>
+          </thead>
+          <tbody>
+            <template if:true={accounts}>
+              <template for:each={accounts} for:item="acc">
+                <tr key={acc.Id} aria-selected="false" class="slds-hint-parent">
+                  <th scope="row">
+                    <div class="slds-truncate" title="Acme - 1,200 Widgets">
+                      <a onclick={accountClick} data-id={acc.Id} tabindex="0">{acc.Name}</a>
+                    </div>
+                  </th>
+                  <template for:each={filters} for:item="fil2">
+                    <td key={fil2.id} role="gridcell">
+                      <div class="slds-truncate" title="Acme">
+                        <c-whitespace-row filter={fil2} account={acc}></c-whitespace-row>
+                      </div>
+                    </td>
+                  </template>
+                </tr>
+              </template>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </lightning-card>
+  </template>
+</template>

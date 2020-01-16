@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title={uppercaseProp2} icon-name="standard:account">
+    <p class="slds-p-horizontal_small">
+      {prop2}<br />
+
+      <lightning-input type="text" label="Enter some text" value={prop2} onchange={valueUpdate}></lightning-input>
+    </p>
+
+    <lightning-map 
+    map-markers={mapMarkers}
+    markers-title={markersTitle}
+></lightning-map>
+
+
+  </lightning-card>
+</template>

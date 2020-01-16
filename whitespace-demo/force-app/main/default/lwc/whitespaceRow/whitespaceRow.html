@@ -1,0 +1,8 @@
+<template>
+  <template if:true={boolean}>
+    <lightning-icon icon-name="action:approval" size="x-small" alternative-text="Approved" ></lightning-icon>
+  </template>
+  <template if:false={boolean}> 
+    <lightning-icon icon-name="utility:warning" alternative-text="Warning!" variant="warning"></lightning-icon>
+  </template>
+</template>

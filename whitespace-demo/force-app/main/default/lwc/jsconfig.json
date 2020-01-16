@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/aliTest": [
+                "aliTest/aliTest.js"
+            ],
+            "c/whitespaceList": [
+                "whitespaceList/whitespaceList.js"
+            ],
+            "c/whitespaceRow": [
+                "whitespaceRow/whitespaceRow.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
